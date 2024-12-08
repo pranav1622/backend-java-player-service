@@ -2,13 +2,15 @@ package com.app.playerservicejava.model;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
+
 @Entity
 @Table(name="PLAYERS")
-public class Player {
+public class Player implements Serializable {
 
     @Id
     @Column(name = "PLAYERID")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String playerId;
 
     @Column(name = "BIRTHYEAR")

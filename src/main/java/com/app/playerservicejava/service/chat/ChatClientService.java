@@ -40,5 +40,7 @@ public class ChatClientService {
         OllamaResult response = ollamaAPI.generate(model, promptBuilder.build(), raw, new OptionsBuilder().build());
         return response.getResponse();
     }
-
+    public OllamaAPI getOllamaAPI() {
+        return this.ollamaAPI;
+    }
 }

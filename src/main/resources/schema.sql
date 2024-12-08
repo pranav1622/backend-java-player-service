@@ -1,4 +1,83 @@
 DROP TABLE IF EXISTS PLAYERS;
 
--- Create a table from the csv
-CREATE TABLE PLAYERS AS SELECT * FROM CSVREAD('Player.csv');
+-- Create a table to match the structure of the CSV
+CREATE TABLE PLAYERS (
+                         PLAYERID VARCHAR(255),
+                         BIRTHYEAR VARCHAR(255),
+                         BIRTHMONTH VARCHAR(255),
+                         BIRTHDAY VARCHAR(255),
+                         BIRTHCOUNTRY VARCHAR(255),
+                         BIRTHSTATE VARCHAR(255),
+                         BIRTHCITY VARCHAR(255),
+                         DEATHYEAR VARCHAR(255),
+                         DEATHMONTH VARCHAR(255),
+                         DEATHDAY VARCHAR(255),
+                         DEATHCOUNTRY VARCHAR(255),
+                         DEATHSTATE VARCHAR(255),
+                         DEATHCITY VARCHAR(255),
+                         NAMEFIRST VARCHAR(255),
+                         NAMELAST VARCHAR(255),
+                         NAMEGIVEN VARCHAR(255),
+                         WEIGHT VARCHAR(255),
+                         HEIGHT VARCHAR(255),
+                         BATS VARCHAR(255),
+                         THROWS VARCHAR(255),
+                         DEBUT VARCHAR(255),
+                         FINALGAME VARCHAR(255),
+                         RETROID VARCHAR(255),
+                         BBREFID VARCHAR(255)
+);
+
+-- Insert data from the CSV file into the table
+INSERT INTO PLAYERS (
+    PLAYERID,
+    BIRTHYEAR,
+    BIRTHMONTH,
+    BIRTHDAY,
+    BIRTHCOUNTRY,
+    BIRTHSTATE,
+    BIRTHCITY,
+    DEATHYEAR,
+    DEATHMONTH,
+    DEATHDAY,
+    DEATHCOUNTRY,
+    DEATHSTATE,
+    DEATHCITY,
+    NAMEFIRST,
+    NAMELAST,
+    NAMEGIVEN,
+    WEIGHT,
+    HEIGHT,
+    BATS,
+    THROWS,
+    DEBUT,
+    FINALGAME,
+    RETROID,
+    BBREFID
+)
+SELECT
+    PLAYERID,
+    BIRTHYEAR,
+    BIRTHMONTH,
+    BIRTHDAY,
+    BIRTHCOUNTRY,
+    BIRTHSTATE,
+    BIRTHCITY,
+    DEATHYEAR,
+    DEATHMONTH,
+    DEATHDAY,
+    DEATHCOUNTRY,
+    DEATHSTATE,
+    DEATHCITY,
+    NAMEFIRST,
+    NAMELAST,
+    NAMEGIVEN,
+    WEIGHT,
+    HEIGHT,
+    BATS,
+    THROWS,
+    DEBUT,
+    FINALGAME,
+    RETROID,
+    BBREFID
+FROM CSVREAD('/Users/pranavreddy/Desktop/Intuit_project/backend-java-player-service/Player.csv');
